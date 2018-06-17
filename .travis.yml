@@ -2,13 +2,12 @@ language: cpp
 os: linux
 services:
   - docker
-compilers:
+compiler:
   - gcc
   - clang
 env:
-  matrix:
-    - IMAGE=ubuntu:rolling
-    - IMAGE=ubuntu:devel
+  - IMAGE=ubuntu:rolling
+  - IMAGE=ubuntu:devel
 before_install:
   - docker build -t img -f dockerfiles/$IMAGE/Dockerfile .
 script:
